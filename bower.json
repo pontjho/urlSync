@@ -1,26 +1,26 @@
 {
-  "name": "Url Sync",
-  "version": "1.0.0",
+  "name": "urlsync",
+  "main": "urlsync.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pontjho/urlSync",
   "authors": [
-    "Pontjho Mokhonoana <pontjho@gmail.com"
+    "Pontjho Mokhonoana <pontjho@gmail.com>"
   ],
-  "description": "Sync input model to url search",
-  "main": "urlSync.js",
+  "description": "Sync the angular model to the url",
   "moduleType": [
-    "es6"
+    "globals"
   ],
   "keywords": [
-    "model",
-    "sync"
+    "angular-js",
+    "url",
+    "sync",
+    "model"
   ],
-  "license": "None",
-  "homepage": "www.entelect.co.za",
-  "private": true,
+  "license": "APACHE",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "lib",
     "test",
     "tests"
   ],

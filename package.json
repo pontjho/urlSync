@@ -4,12 +4,18 @@
   "version": "1.0.0",
   "homepage": "https://www.pontjho.com",
   "licenses": {
-    "type": "MIT",
+    "type": "APACHE",
     "url": "https://raw.github.com/joshdmiller/ng-boilerplate/master/LICENSE"
   },
   "bugs": "https://github.com/pontjho/url-sync/issues",
   "private": false,
   "dependencies": {},
   "devDependencies": {
+    "bower": "^1.3.8",
+    "gulp": "^3.8.7",
+    "gulp-concat": "^2.3.4",
+    "gulp-jshint": "^1.8.3",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.3.1"
   }
 }
