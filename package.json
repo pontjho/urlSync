@@ -1,0 +1,15 @@
+{
+  "author": "Pontjho Mokhonoana",
+  "name": "url-sync",
+  "version": "1.0.0",
+  "homepage": "https://www.pontjho.com",
+  "licenses": {
+    "type": "MIT",
+    "url": "https://raw.github.com/joshdmiller/ng-boilerplate/master/LICENSE"
+  },
+  "bugs": "https://github.com/pontjho/url-sync/issues",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
