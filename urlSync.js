@@ -12,14 +12,16 @@
                 var dateValue = $location.search()[scope.name];
                 var parsedValue = null;
 
-                if (scope.type == 'date') {
+                if (scope.type == 'date')
+                {
                     var date = moment(dateValue, "YYYY-MM-DD");
                     if(date.isValid())
                     {
                         scope.ngModel = date.toDate();
                     }
                 }
-                else {
+                else
+                {
                     parsedValue = dateValue;
                 }
 
@@ -28,27 +30,20 @@
                     scope.ngModel = parsedValue;
                 }
 
-                scope.$watch('ngModel', function (newValue, oldValue) {
-
-                    //console.log('change ' + newValue);
-                    if (newValue) {
-                        console.log(newValue);
-                        console.log(scope.type);
-                        if (scope.type == 'date') {
+                scope.$watch('ngModel', function (newValue, oldValue)
+                {
+                    if (newValue)
+                    {
+                        if (scope.type == 'date')
+                        {
                             if(newValue instanceof Date)
                             {
-                            console.log('is date');
                                 var date = $filter('date')(newValue, 'yyyy-MM-dd');
                                 $location.search(scope.name, date);
-                            }
-                            else
-                            {
-                                console.log('Not a valid date');
                             }
                         }
                         else
                         {
-                            console.log('Not a date');
                             $location.search(scope.name, newValue);
                         }
                     }
