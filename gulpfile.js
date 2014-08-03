@@ -19,7 +19,7 @@ gulp.task('scripts', function() {
     return gulp.src(jsPath)
         .pipe(rename('url-sync.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('.'));
 });
 
-gulp.task('default', ['lint']);
+gulp.task('default', ['lint', 'scripts']);

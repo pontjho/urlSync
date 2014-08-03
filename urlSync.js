@@ -9,15 +9,14 @@
             scope: { ngModel: '=', name: '@', type: '@' },
             link: function (scope, iElement, iAttrs)
             {
-
                 var dateValue = $location.search()[scope.name];
                 var parsedValue = null;
 
                 if (scope.type == 'date') {
-                    var date = moment(dateValue);
+                    var date = moment(dateValue, "YYYY-MM-DD");
                     if(date.isValid())
                     {
-                        parsedValue = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+                        scope.ngModel = date.toDate();
                     }
                 }
                 else {
@@ -31,13 +30,27 @@
 
                 scope.$watch('ngModel', function (newValue, oldValue) {
 
-                    if (newValue && oldValue) {
-                        if (scope.type == date && newValue instanceof Date) {
-                            var date = $filter('date')(newValue, 'yyyy-MM-dd');
-                            $location.search(scope.name, date);
+                    //console.log('change ' + newValue);
+                    if (newValue) {
+                        console.log(newValue);
+                        console.log(scope.type);
+                        if (scope.type == 'date') {
+                            if(newValue instanceof Date)
+                            {
+                            console.log('is date');
+                                var date = $filter('date')(newValue, 'yyyy-MM-dd');
+                                $location.search(scope.name, date);
+                            }
+                            else
+                            {
+                                console.log('Not a valid date');
+                            }
                         }
                         else
+                        {
+                            console.log('Not a date');
                             $location.search(scope.name, newValue);
+                        }
                     }
 
                 });
